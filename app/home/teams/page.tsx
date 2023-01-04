@@ -1,12 +1,14 @@
 import React from 'react'
+import { TeamList } from './components';
 import { getTeams } from './services'
 
 async function Teams() {
     const data = await getTeams();
+    console.log(data);
   return (
     <div>
         <p>Teams</p>
-        <>{JSON.stringify(data)}</>
+        <div><TeamList data={data}/></div>
     </div>
   )
 }
